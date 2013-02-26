@@ -20,8 +20,8 @@ public:
     friend Matrix operator-(const Matrix&, const Matrix&);//
     friend Matrix operator*(const Matrix&, const Matrix&);
     friend Matrix operator-(Matrix);//
-    Matrix operator+=(const Matrix&);
-    Matrix operator-=(const Matrix&);
+    Matrix operator+=(const Matrix&);//
+    Matrix operator-=(const Matrix&);//
     Vector& operator[](quint32);//
     friend std::ostream& operator<<(std::ostream&,const Matrix&);//
 };

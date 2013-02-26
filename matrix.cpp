@@ -181,6 +181,28 @@ Matrix operator-(const Matrix &M1,const Matrix &M2)
     }
 }
 
+Matrix operator *(const Matrix& M1, const Matrix& M2)
+{
+    if (M1.width==M2.height)
+    {
+        Matrix M3(M2.width,M1.height);
+        for (quint32 i=0;i<M1.height;i++)
+        {
+            for (quint32 j=0;j<M2.width;j++)
+            {
+                M3[i][j]=(*M1.Lines[i])*(*(~M2).Lines[j]);
+            }
+        }
+        return M3;
+    }
+    else
+    {
+        std::cout<<"Invalid sizes for multiplication"<<std::endl;
+        Matrix M3;
+        return M3;
+    }
+}
+
 Matrix Matrix::operator+=(const Matrix& M)
 {
     if (M.height==height)
